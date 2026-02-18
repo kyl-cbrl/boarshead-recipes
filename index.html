@@ -1,15 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Boar's Head Corned Beef Recipes</title>
-</head>
-<body>
-<h1> Boar's Head Corned Beef Recipes</h1>
-<ul>
-  <li><a href="corned-beef-cabbage.html">Classic Corned Beef & Cabbage</a></li>
-  <li><a href="corned-beef-tacos.html">Corned Beef Street Tacos</a></li>
-  <li><a href="reuben-casserole.html">Reuben Casserole</a></li>
-</ul>
-</body>
-</html>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boar’s Head Corned Beef Recipes</title>
+  <meta name="description" content="Three Boar’s Head corned beef recipes with clean recipe-card pages." />
+  <style>
+    :root{
+      --bg1:#050805;
+      --bg2:#0b1510;
+      --card: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.14);
+      --text:#f2f7f4;
+      --muted:#c7d6ce;
+      --accent:#2bd67b;
+      --accent2:#d7b42b;
+      --shadow: 0 18px 70px rgba(0,0,0,.50);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1000px 520px at 15% 0%, rgba(43,214,123,.18), transparent 55%),
+        radial-gradient(1000px 520px at 85% 10%, rgba(215,180,43,.16), transparent 55%),
+        radial-gradient(900px 600px at 50% 110%, rgba(255,255,255,.06), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      min-height:100vh;
+      padding:24px;
+    }
+    .wrap{width:min(980px,100%); margin:0 auto;}
+    header{
+      padding:28px 18px 18px;
+      border:1px solid var(--border);
+      border-radius:22px;
+      background: rgba(0,0,0,.25);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    h1{
+      margin:0;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(30px, 4.5vw, 46px);
+      letter-spacing:-.02em;
+      line-height:1.05;
+    }
+    .sub{
+      margin:10px 0 0;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height:1.55;
+      font-size:15px;
+    }
+    .chips{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:14px;
+    }
+    .chip{
+      border:1px solid rgba(43,214,123,.35);
+      background: rgba(43,214,123,.10);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color: var(--text);
+    }
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius:18px;
+      background: var(--card);
+      box-shadow: 0 10px 40px rgba(0,0,0,.35);
+      padding:16px 16px 14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      text-decoration:none;
+      color: var(--text);
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.08);
+    }
+    .title{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:10px;
+    }
+    .title h2{
+      margin:0;
+      font-size:18px;
+      line-height:1.2;
+    }
+    .tag{
+      font-size:12px;
+      color: var(--muted);
+      border:1px dashed rgba(255,255,255,.25);
+      border-radius:999px;
+      padding:6px 10px;
+      white-space:nowrap;
+    }
+    .desc{
+      margin:0;
+      color: var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+    .btn{
+      margin-top:auto;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      font-weight:700;
+      color: var(--accent);
+      font-size:14px;
+    }
+    footer{
